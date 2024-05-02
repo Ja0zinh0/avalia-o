@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Cadastro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #c3ffb3; /* Fundo verde claro */
+        }
+        form {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #007f00; /* Título do formulário */
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="email"], textarea {
+            width: calc(100% - 12px); /* Largura do input */
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="radio"], input[type="checkbox"] {
+            margin-right: 5px;
+        }
+        button[type="submit"], button[type="reset"] {
+            background-color: #4CAF50; /* Cor do botão */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button[type="submit"]:hover, button[type="reset"]:hover {
+            background-color: #45a049; /* Cor do botão ao passar o mouse */
+        }
+    </style>
+</head>
+<body>
+    <form action="/processar-formulario" method="post">
+        <h2>Dados Pessoais</h2>
+        <label for="nome">Nome Completo:</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="profissao">Profissão:</label>
+        <input type="text" id="profissao" name="profissao">
+
+        <h2>Localização</h2>
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="endereco">Endereço:</label>
+        <input type="text" id="endereco" name="endereco">
+
+        <h2>Faixa Etária</h2>
+        <label><input type="radio" name="faixa_etaria" value="até 20"> Até 20 anos</label>
+        <label><input type="radio" name="faixa_etaria" value="21 - 30"> 21 - 30 anos</label>
+        <label><input type="radio" name="faixa_etaria" value="31 - 40"> 31 - 40 anos</label>
+        <label><input type="radio" name="faixa_etaria" value="mais de 40"> Mais de 40 anos</label>
+
+        <h2>Esportes que Pratica</h2>
+        <label><input type="checkbox" name="esportes[]" value="Futebol de Campo"> Futebol de Campo</label>
+        <label><input type="checkbox" name="esportes[]" value="Futebol de Salão"> Futebol de Salão</label>
+        <label><input type="checkbox" name="esportes[]" value="Futebol Society"> Futebol Society</label>
+        <label><input type="checkbox" name="esportes[]" value="Vôlei de Quadra"> Vôlei de Quadra</label>
+        <label><input type="checkbox" name="esportes[]" value="Natação"> Natação</label>
+
+        <h2>Comentário</h2>
+        <textarea id="comentario" name="comentario" rows="4"></textarea>
+
+        <div>
+            <button type="submit">Enviar</button>
+            <button type="reset">Limpar</button>
+        </div>
+    </form>
+</body>
+</html>

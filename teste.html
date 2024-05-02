@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Cadastro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #0766d3;
+            color: #000;
+        }
+        td:nth-child(odd) {
+            background-color: #cceeff;
+        }
+        td:nth-child(even) {
+            background-color: #0056b3;
+            color: #fff;
+        }
+        input[type="text"], input[type="email"], input[type="tel"], input[type="date"], textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .checkbox-group label {
+            width: auto; 
+        }
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h2>Formulário de Cadastro</h2>
+    <form action="/processar-formulario" method="post">
+        <table>
+            <tr>
+                <th colspan="1">não é associado?</th>
+                <th colspan="1">faça seu cadastro</th>
+            </tr>
+            <tr>
+            </tr>
+            <tr>
+                <td>Nome:</td>
+                <td><input type="text" name="nome" required></td>
+            </tr>
+            <tr>
+                <td>CPF:</td>
+                <td><input type="text" name="cpf" required></td>
+            </tr>
+            <tr>
+                <td>E-mail:</td>
+                <td><input type="email" name="email" required></td>
+            </tr>
+            <tr>
+                <td>Website:</td>
+                <td><input type="text" name="website"></td>
+            </tr>
+            <tr>
+                <td>Endereço:</td>
+                <td><input type="text" name="endereco"></td>
+            </tr>
+            <tr>
+                <td>Bairro:</td>
+                <td><input type="text" name="bairro"></td>
+            </tr>
+            <tr>
+                <td>CEP:</td>
+                <td><input type="text" name="cep"></td>
+            </tr>
+            <tr>
+                <td>Telefone:</td>
+                <td><input type="tel" name="telefone"></td>
+            </tr>
+            <tr>
+                <td>Data de Nascimento:</td>
+                <td><input type="date" name="data_nascimento"></td>
+            </tr>
+            <tr>
+                <td>Celular:</td>
+                <td><input type="tel" name="celular"></td>
+            </tr>
+            <tr>
+                <td>Login:</td>
+                <td><input type="text" name="login" required></td>
+            </tr>
+            <tr>
+                <td colspan="2">Preferências:</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="checkbox" name="preferencias[]" value="Tecnologia"> Tecnologia<br>
+                    <input type="checkbox" name="preferencias[]" value="Esportes"> Esportes<br>
+                    <input type="checkbox" name="preferencias[]" value="Automóveis"> Automóveis<br>
+                    <input type="checkbox" name="preferencias[]" value="Culinária"> Culinária<br>
+                    <input type="checkbox" name="preferencias[]" value="Política"> Política<br>
+                    <input type="checkbox" name="preferencias[]" value="Policial"> Policial<br>
+                    <input type="checkbox" name="preferencias[]" value="Tempo"> Tempo<br>
+                    <input type="checkbox" name="preferencias[]" value="Cultura"> Cultura<br>
+                    <input type="checkbox" name="preferencias[]" value="Economia"> Economia<br>
+                    <input type="checkbox" name="preferencias[]" value="Jogos"> Jogos<br>
+                    <input type="checkbox" name="preferencias[]" value="Educação"> Educação<br>
+                    <input type="checkbox" name="preferencias[]" value="Viagem"> Viagem<br>
+                    <input type="checkbox" name="preferencias[]" value="Empregos"> Empregos<br>
+                    <input type="checkbox" name="preferencias[]" value="Moda e Estilo"> Moda e Estilo<br>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="checkbox" name="autorizacao" required>
+                    Li as regras de cadastro e autorizo a criação do usuário.
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2"><button type="submit">Cadastrar</button></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
